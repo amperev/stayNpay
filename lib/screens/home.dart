@@ -34,6 +34,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 240,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -41,31 +44,38 @@ class HomePage extends StatelessWidget {
                 height: 50,
                 width: 150,
                 decoration: BoxDecoration(
-                    color: Colors.amber[300],
-                    borderRadius: BorderRadius.circular(20)),
-                child: FlatButton(
+                  color: Colors.amber[300],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: TextButton(
                   onPressed: () {},
                   child: Text(
                     'Login',
                     style: TextStyle(
                       color: primaryColor,
+                      fontFamily: 'Montserrat',
                       fontSize: 25,
                     ),
                   ),
                 ),
               ),
+              SizedBox(
+                width: 20,
+              ),
               Container(
                 height: 50,
                 width: 150,
                 decoration: BoxDecoration(
-                    color: Colors.amber[300],
-                    borderRadius: BorderRadius.circular(20)),
-                child: FlatButton(
+                  color: Colors.amber[300],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: TextButton(
                   onPressed: () {},
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
                       color: primaryColor,
+                      fontFamily: 'Montserrat',
                       fontSize: 25,
                     ),
                   ),
