@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:staynpay/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,6 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: kgreenblack,
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
