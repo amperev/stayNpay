@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:staynpay/constants.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     const Map<int, Color> colorMap = {
@@ -31,6 +30,7 @@ class HomePage extends StatelessWidget {
                 fontSize: 32.0,
                 color: Colors.white,
                 fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                 height: 50,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Colors.amber[300],
+                  color: kgreen,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextButton(
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Login',
                     style: TextStyle(
-                      color: primaryColor,
+                      color: Colors.white,
                       fontFamily: 'Montserrat',
                       fontSize: 25,
                     ),
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
                 height: 50,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Colors.amber[300],
+                  color: kgreen,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextButton(
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
-                      color: primaryColor,
+                      color: Colors.white,
                       fontFamily: 'Montserrat',
                       fontSize: 25,
                     ),
