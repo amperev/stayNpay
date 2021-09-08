@@ -72,7 +72,9 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signin');
+                  },
                   child: Text(
                     'Sign Up',
                     style: TextStyle(

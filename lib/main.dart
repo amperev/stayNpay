@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:staynpay/screens/home.dart';
 import 'package:staynpay/screens/login.dart';
+import 'screens/signin.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/login': (context) => Login(),
+        '/signin': (context) => Signin(),
       },
       theme: ThemeData(
         primaryColor: Colors.amber[300],
