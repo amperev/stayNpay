@@ -24,29 +24,31 @@ class Signin extends StatelessWidget {
         title: Text(kAppName),
       ),
       backgroundColor: primaryColor,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Sign In',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'OpenSans',
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Sign In',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'OpenSans',
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            _buildNameField(),
-            _buildEmailField(),
-            _buildPhoneField(),
-            _buildPasswordField(),
-            Container(
-              alignment: Alignment.bottomRight,
-              padding: EdgeInsetsDirectional.only(end: 20),
-              child: _proceedFAB(),
-            ),
-          ],
+              _buildNameField(),
+              _buildEmailField(),
+              _buildPhoneField(),
+              _buildPasswordField(),
+              Container(
+                alignment: Alignment.bottomRight,
+                padding: EdgeInsetsDirectional.only(end: 20),
+                child: _proceedFAB(),
+              ),
+            ],
+          ),
         ),
       ),
     );
