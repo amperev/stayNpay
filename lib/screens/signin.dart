@@ -42,6 +42,7 @@ class Signin extends StatelessWidget {
               _buildEmailField(),
               _buildPhoneField(),
               _buildPasswordField(),
+              RadioSignInAs(), // TODO: please stop signin when val == -1
               Container(
                 alignment: Alignment.bottomRight,
                 padding: EdgeInsetsDirectional.only(end: 20),
@@ -51,6 +52,65 @@ class Signin extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// val denotes whether USER is Landlord or Student
+/// Using setState to change val depending on which radio button is selected
+class RadioSignInAs extends StatefulWidget {
+  @override
+  _RadioSignInAsState createState() => _RadioSignInAsState();
+}
+
+class _RadioSignInAsState extends State<RadioSignInAs> {
+  int val = -1;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Expanded(
+          child: ListTile(
+            title: Text(
+              "Student",
+              style: kLabelStyle,
+            ),
+            leading: Radio(
+              fillColor:
+                  MaterialStateColor.resolveWith((states) => Colors.white54),
+              value: 1,
+              groupValue: val,
+              onChanged: (value) {
+                setState(() {
+                  val = value;
+                });
+              },
+              activeColor: Colors.white54,
+            ),
+          ),
+        ),
+        Expanded(
+          child: ListTile(
+            title: Text(
+              "Landlord",
+              style: kLabelStyle,
+            ),
+            leading: Radio(
+              fillColor:
+                  MaterialStateColor.resolveWith((states) => Colors.white54),
+              value: 2,
+              groupValue: val,
+              onChanged: (value) {
+                setState(() {
+                  val = value;
+                });
+              },
+              activeColor: Colors.white54,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
