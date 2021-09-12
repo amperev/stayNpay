@@ -6,52 +6,63 @@ import 'package:staynpay/constants.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const Map<int, Color> colorMap = {
-      50: Color.fromRGBO(42, 54, 59, 0.1),
-      100: Color.fromRGBO(42, 54, 59, 0.2),
-      200: Color.fromRGBO(42, 54, 59, 0.3),
-      300: Color.fromRGBO(42, 54, 59, 0.4),
-      400: Color.fromRGBO(42, 54, 59, 0.5),
-      500: Color.fromRGBO(42, 54, 59, 0.6),
-      600: Color.fromRGBO(42, 54, 59, 0.7),
-      700: Color.fromRGBO(42, 54, 59, 0.8),
-      800: Color.fromRGBO(42, 54, 59, 0.9),
-      900: Color.fromRGBO(42, 54, 59, 1.0),
-    };
-    const MaterialColor primaryColor = MaterialColor(0xFF2A363B, colorMap);
-
+    final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(kAppName),
-      ),
-      backgroundColor: primaryColor,
+      backgroundColor: theme.backgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Log In',
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'OpenSans',
-              fontSize: 30.0,
-              fontWeight: FontWeight.bold,
+        children: <Widget>[
+          Flexible(
+            flex: 1,
+            child: Center(
+              child: Text(
+                'Log In',
+                // style: theme.textTheme.headline2,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'OpenSans',
+                  fontSize: 32.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
-          _buildPhoneNumberField(),
-          Container(
-            alignment: Alignment.bottomRight,
-            padding: EdgeInsetsDirectional.only(end: 20),
-            child: _proceedFAB(),
+          Flexible(
+            flex: 1,
+            child: _buildPhoneNumberField(context),
           ),
+          Flexible(
+            flex: 2,
+            fit: FlexFit.loose,
+            child: Center(
+              child: Container(
+                width: 160,
+                decoration: BoxDecoration(
+                  color: theme.primaryColor,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: TextButton(
+                  child: Text(
+                    'Login',
+                    style: theme.textTheme.bodyText2,
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+            ),
+          ),
+          // SizedBox(
+          //   height: 100,
+          // )
         ],
       ),
     );
   }
 }
 
-Widget _buildPhoneNumberField() {
+Widget _buildPhoneNumberField(BuildContext context) {
   return Padding(
-    padding: EdgeInsets.all(20),
+    padding: EdgeInsets.all(30),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -69,31 +80,20 @@ Widget _buildPhoneNumberField() {
             inputFormatters: [
               FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
             ],
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: 'OpenSans',
-            ),
+            style: Theme.of(context).textTheme.bodyText1,
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
+              contentPadding: EdgeInsets.only(top: 15.0),
               prefixIcon: Icon(
                 Icons.phone,
-                color: Colors.white,
+                color: Colors.black,
               ),
-              hintText: 'Enter your Phone',
-              hintStyle: kHintTextStyle,
+              hintText: 'Enter phone number',
+              hintStyle: Theme.of(context).textTheme.bodyText1,
             ),
           ),
         ),
       ],
     ),
-  );
-}
-
-Widget _proceedFAB() {
-  return FloatingActionButton(
-    onPressed: () {},
-    backgroundColor: kgreenblack,
-    child: Icon(Icons.arrow_right),
   );
 }
